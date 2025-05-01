@@ -6,7 +6,6 @@ const Todos = () => {
     const [todos, setTodos] = useState([]);
     const [newTask, setNewTask] = useState("");
     const trails = [
-        { opacity: "0.8", width: "98%" },
         { opacity: "0.6", width: "96%" },
         { opacity: "0.4", width: "94%" }
     ];
@@ -84,6 +83,9 @@ const Todos = () => {
                         ) : (
                             <TodoItem className="list-group-item mx-auto" style={{ width: '100%' }}><h3>No tasks, add a task</h3></TodoItem>
                         )}
+                        <li className="list-group-item d-flex justify-content-between align-items-center todo-item mx-auto" style={{ width: '100%' }}>
+                            <small className="todo-count font-weight-light text-muted">{todos.length} item left</small>
+                        </li>
                         {trails.map((trail, index) => (
                             <Traling key={index} width={trail.width} opacity={trail.opacity} />
                         ))}
